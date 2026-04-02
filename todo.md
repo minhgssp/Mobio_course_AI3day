@@ -47,8 +47,8 @@
 - [x] S8-T3: Đánh dấu hoàn thành Sprint.
 
 ## Sprint 9: Đồng bộ dữ liệu lên GitHub
-- [/] S9-T1: Cập nhật todo.md cho Sprint 9.
-- [ ] S9-T2: Commit các thay đổi hiện tại.
-- [ ] S9-T3: Pull các thay đổi từ origin/master.
+- [x] S9-T1: Cập nhật todo.md cho Sprint 9.
+- [x] S9-T2: Commit các thay đổi hiện tại.
+- [/] S9-T3: Pull các thay đổi từ origin/master.
 - [ ] S9-T4: Push code lên GitHub.
 - [ ] S9-T5: Hoàn thành Sprint và cập nhật todo.md.
