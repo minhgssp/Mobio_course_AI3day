@@ -1,0 +1,223 @@
+Bài toán thực hành AI - Team PD - Use case Phản hồi RFP
+1. Thông tin chung
+Tên Dự án AI trọng điểm
+Bài toán cần giải quyết
+Thành phần tham gia (PIC)
+Công cụ AI dự kiến sử dụng
+Kết quả đầu ra kỳ vọng (Prototype/ Output)
+Tác động tới hiệu suất phòng ban
+Trả lời thầu
+Phản hồi RFP của khách hàng dựa trên kho tài liệu đã có (Trả lời RFP của những lần làm thầu trước đây)
+Tạo & Sắp xếp & Format tài liệu tự động
+PO - Người phản hồi các yêu cầu liên quan tới nghiệp vụ, tính năng hệ thống
+SA - Người phản hồi các yêu cầu liên quan tới yếu tố kỹ thuật của hệ thống (kiến trúc, bảo mật, hạ tầng, kết nối...)
+AM - Lên quotation dựa trên các hạng mục dự kiến triển khai
+PD - Người điều phối & đánh giá chung. Phản hồi các yêu cầu về năng lực nhà thầu, kinh nghiệm & lộ trình triển khai...
+Antigravity
+Các GEM đã train
+Tool để đọc được nội dung email/chat
+Trình bày ở mục 2
+Tự động hóa quy trình phân tích & phản hồi RFP tận dụng kho trả lời thầu đã có sẵn. Giảm effort xử lý thủ công của các team tham gia từ 50-80% thời gian
+(Thay vì cần ‘customize’ nội dung phản hồi thủ công; thì chỉ cần review & touch up nội dung phản hồi để thực sự phù hợp với khách hàng)
+Tăng chất lượng phản hồi thầu & tính nhất quán của các phản hồi (đặc biệt khi có nhiều ‘giọng văn’)
+Giảm thời gian xử lý thủ tục cho PD (VD: lên checklist, set up file/folder)
+2. Quy trình & Kết quả đầu ra kỳ vọng (Prototype/ Output)
+Agent/Bước
+Input
+Process
+Output
+Rule
+1. Thông tin tổng quan
+1.1. Thông tin chung gói thầu
+File RFP
+Email/Thông báo chào thầu
+Scan input và trích xuất thông tin gói thầu & quy cách dự thầu
+Mẫu “Thông tin gói thầu”
+Không suy đoán nếu thiếu thông tin
+Ưu tiên trích xuất nguyên văn
+1.2. Yếu tố gây loại & Điểm cần lưu ý
+Dựa vào bộ tiêu chí đánh giá, xác định các điểm nào 'bất thường'
+Là những tiêu chí Mobio không đáp ứng được; là yếu tố 'loại
+Theo hạng mục: Thời gian - Năng lực - Tài chính - Kỹ thuật…
+Xác định mức độ rủi ro trên thang từ 1-10 (min - max)
+Dạng bảng, với các cột: Điểm bất thường (ưu tiên trích nguyên văn nội dung đề bài thầu) - Đánh giá của PD
+Một số tiêu chí đánh giá 'bất thường' như: Bắt buộc bàn giao source; Cung cấp BCTC…
+Ưu tiên rà soát những yêu cầu bắt buộc
+Không tự kết luận nếu không chắc chắn
+2. Khởi tạo document
+2.1: Tạo checklist
+File RFP
+‘Kho tài liệu thầu’
+Dựa vào input, xác định cần nộp những tài liệu tham chiếu nào
+Tổng hợp thành 1 checklist hồ sơ dự thầu dạng bảng
+Bản nội bộ: Theo format mẫu “Checklist hồ sơ dự thầu”
+Bản gửi khách: Tương bản nội bộ nhưng chỉ có các cột: Nhóm tài liệu - STT - Mã tham chiếu - Loại tài liệu - Link tài liệu (bản nộp) - Status
+2.2 Tạo Folder hồ sơ dự thầu
+Tạo 1 folder Thầu
+Tìm trong ‘kho tài liệu’ những giấy tờ/tài liệu tương tự
++ Nếu đã có sẵn: Clone cho mỗi loại hồ sơ/tài liệu vào folder thầu mới tạo
++ Nếu chưa có sẵn: Tạo ra các file doc/sheet, đặt tên theo tên trong checklist
+Ưu tiên tài liệu mới nhất
+2.3: Format file Phản hồi RFP nội bộ
+File RFP
+Thêm các cột vào từng sheet yêu cầu của của RFP theo “Mẫu bảng phản hồi RFP”
+Tạo bảng theo dõi tiến độ với thông tin: PIC - Progress (= Tỉ lệ câu đã có phản hồi/Tổng số câu được assign)
+“Mẫu bảng phản hồi RFP”
+3. Phản hồi requirement dựa trên kho tài liệu
+3.1: Đối chiếu giữa yêu cầu của RFP mới và ‘Kho tài liệu’ thầu cũ
+File RFP
+‘Kho tài liệu thầu’
+Scan các yêu cầu trong RFP mới
+Phân loại (sẽ cần 1 bảng list phân nhóm để AI dựa vào đây phân loại):
+Nếu Tính năng: Theo module
+Nếu Kỹ thuật: Theo chủ đề
+Nếu Năng lực nhà thầu: Theo loại tài liệu/thông tin yêu cầu
+Query Kho tài liệu và chỉ ra nội dung yêu cầu tương tự. Xác định tỉ lệ trùng (0-100%)
+Nếu chưa có trong kho tài liệu, cần đánh dấu là “Yêu cầu mới”.
+1 bảng Mapping để thuận tiện check lại với các cột: Yêu cầu trong RFP mới - Loại gì - Tương đương với yêu cầu (File nào - Dòng nào) - Tỉ lệ trùng
+Ưu tiên cùng domain/ industry
+Ưu tiên câu có tỉ lệ trùng cao nhất
+3.2: Xác định mức độ đáp ứng
+Scan và mô tả: RFP hướng dẫn tuyên bố đáp ứng như thế nào
+(Con người): Điền giá trị vào cột Mức độ align với roadmap, Tỉ lệ đáp ứng hiện tại
+Đề xuất hướng tuyên bố đáp ứng/chiến lược phản hồi chung cho người trả lời dựa trên bộ rule. Note ở từng câu
+Ma trận tuyên bố đáp ứng
+3.3: Trả lời RFP
+Dựa trên output của bước trước, Trả lời RFP cho file mới (1st draft).
+Thêm 1 cột chú thích: Đây là trả lời dựa trên câu đã có - hay trả lời mới.
+(Con người) Review nội dung 1st draft và để lại feedback ở cột liền kề
+Dựa vào nội dung feedback của người review, cải tiến và hoàn thiện nội dung hoàn chỉnh 2nd draft
+(Con người) Review nội dung.
+Nếu cần sửa >20%: Tiếp tục feedback/viết mẫu để AI sửa. 
+Nếu cần sửa <20%: Cân nhắc tự điều chỉnh để đúng ý
+1st draft ở dạng các gạch đầu dòng ngắn (mỗi ý <30 từ), để người review ‘nắm bắt được’ định trả lời gì
+2nd draft: đầy đủ theo format/giọng điệu của rule
+- Điều chỉnh tên gọi theo khách hàng mở thầu
+- Bám sát nội dung trả lời trong ‘Kho tài liệu’. Không tự viết/vẽ ra câu trả lời nếu không đủ bối cảnh. Hạn chế điều chỉnh cách diễn đạt
+- Các câu trả lời mới cần được đánh dấu để review kỹ hơn + thêm vào ‘kho tài liệu’
+3.3: Bổ sung kho tài liệu
+File RFP (bản final)
+Với những yêu cầu được đánh dấu là “Mới”, và đã có phản hồi final; thì thêm Câu hỏi & Trả lời vào ‘Kho tài liệu’
+Đảm bảo nội dung thêm vào theo chuẩn format đã thống nhất
+Dạng JSON theo mẫu: Câu hỏi - Câu trả lời - Tag (VD: KHCN/ KHDN; Tích hợp… - Sẽ cần có list) - Version
+4. QC & Hoàn thiện
+4.1: Chấm điểm phản hồi RFP
+GEM chấm điểm thầu (LINK:...)
+*Với phân loại tuyên bố đáp ứng:
+“Đọc hiểu” cách phản hồi tuyên bố đáp ứng hiện tại để tìm ra pattern chung (VD: Tuyên bố đáp ứng Vượt trội nghĩa là gì; Tuyên bố đáp ứng Một phần có tính phí nghĩa là gì…)
+Đối chiếu với Directory chuẩn, để chỉ ra điểm khác biệt/nên điều chỉnh để logic hơn
+*Với nội dung phản hồi:
+Scan nội dung cột Mức độ đáp ứng & Tuyên bố đáp ứng ở từng sheet Yêu cầu
+Đối chiếu nội dung tuyên bố với bộ tiêu chí phản hồi thầu
+Chấm điểm trên thang 1-10
+Chỉ ra phần nội dung nên điều chỉnh/cải thiện để tăng điểm với người chấm thầu (VD: không thực tế, thiếu thông tin, không nhất quán…)
+Với mỗi sheet phản hồi, tạo 1 sheet chấm điểm (trong cùng 1 file). Sheet chấm điểm có các cột: Tên hạng mục - PIC - Điểm - Feedback cho phần tuyên bố đáp ứng
+Chỉ chấm điểm, không sửa nội dung
+Không chấm cảm tính, cần sự khách quan cao
+4.2: Format nội dung Phản hồi RFP cuối
+File RFP (bản final)
+Format file phản hồi RFP theo rule
+Đảm bảo tất cả nội dung phản hồi cùng font & size
+Câu đầu tiên của tuyên bố đáp ứng luôn bold text
+Bold những nội dung mang tính chất rất highlight trong nội dung phản hồi thầu (<5 chỗ higlight)
+5. Ước tính MD & Chào giá
+5.1: Estimate MD - Cơ sở chào giá
+Gem có skill estimate MD
+Feature list hiện tại
+MD cho những hạng mục từng chào thầu (Theo ‘Kho tài liệu’)
+Phân nhóm những mục cần phát triển mới (dựa trên feature list hiện có)
+Estimate MD dựa trên mức độ phức tạp của công việc, tỉ lệ đáp ứng hiện tại…
+Tính chi phí cho từng hạng mục dựa trên công thức: MD * MD rate
+Dạng bảng gồm các cột: Tên hạng mục cần phát triển thêm - MD est - Chi phí - Mô tả Cơ sở để tính toán MD (quote nguồn nếu có)
+Không estimate MD cho những hạng mục Đã có sẵn, không cần phát triển thêm
+3. Các mẫu trình bày/rule chi tiết
+Mẫu “Thông tin gói thầu”
+I. Thông tin chung về gói thầu:
+Tên gói thầu
+Chủ đầu tư
+Thời gian thực hiện hợp đồng
+II. Các mốc thời gian và địa điểm quan trọng
+Làm rõ HSMT
+muộn nhất trước {ngày giờ}
+Thời điểm đóng thầu
+nộp hồ sơ muộn nhất trước {ngày giờ}
+III. Quy định về HSDT
+Quy cách
+1. Bản mềm: tới ai, đóng gói ra sao, định dạng thế nào...
+2. Bản cứng: Địa điểm nào, Ai nhận, Yêu cầu đóng dấu/đặt tên/niêm phong...
+Lưu ý khác
+Mẫu “Checklist hồ sơ dự thầu”
+Nhóm tài liệu
+STT
+Mã tham chiếu
+Loại tài liệu
+Link tài liệu (bản làm)
+Link tài liệu (bản nộp)
+PIC
+DL 1st draft
+DL 2nd draft
+DL finalize
+Status
+Note
+Định nghĩa
+Gom các tài liệu liên quan vào 1 nhóm. Merge ô để dễ xem
+Đánh số nguyên lần lượt tăng dần, bắt đầu từ 1
+Dạng text
+Đặt tên ngắn cho loại tài liệu
+Dạng text
+Dạng text
+List option (multiple select)
+Dạng date
+Dạng date
+Dạng date
+Dạng list option
+(VD: To do - To review - To sign/scan - Complete)
+Dạng text. Có thể điền.Link tài liệu reference / Các lưu ý về tài liệu
+Ma trận tuyên bố đáp ứng
+Mức độ align với roadmap
+Khách hàng đánh giá Mức độ cần thiết
+Tuyên ngôn đáp ứng
+Rule phản hồi
+Có sẵn
+Có sẵn nhưng cần cải tiến
+Chưa có sẵn nhưng align với roadmap trong <1 năm tới + không cần customize thêm
+Bất cứ mức độ nào
+Vượt trội/ Hoàn toàn 
+Mô tả cách Mobio đáp ứng.
+Chỉ cần đáp ứng nhiều hơn yêu cầu một chút cũng sẽ tuyên bố đáp ứng Vượt trội
+Một phần
+Mô tả cái gì có sẵn - cái gì cần customize. 
+Nêu rõ việc customize để đáp ứng là không phát sinh chi phí.
+(VD: Chi phí tuỳ biến để đáp ứng hoàn toàn yêu cầu đã được chúng tôi tính toán và bao gồm trong giá chào của gói thầu!)
+Mô tả cái gì có sẵn - cái gì cần customize.
+Chưa có sẵn nhưng align với roadmap trong >1 năm tới
+Đồng ý customize
+Must have/ Mandatory/ Bắt buộc
+Đáp ứng + không tính phí customize
+Should have/ Nice to have/ Optional
+Đáp ứng + Tính phí customize
+Commit có đáp ứng kèm điều kiện
+(VD: Mobio có khả năng đáp ứng yêu cầu này thông qua việc phát triển/tuỳ biến bổ sung. Hạng mục không nằm trong phạm vi triển khai tiêu chuẩn và sẽ được xem xét triển khai theo nhu cầu thực tế của Ngân hàng, trên cơ sở thống nhất về phạm vi, chi phí và tiến độ)
+Không align với roadmap
+Hoặc Customize ngoài phạm vi dự án
+Must have/ Mandatory/ Bắt buộc
+Đáp ứng + Tính phí customize
+Should have/ Nice to have/ Optional
+Không đáp ứng
+Mô tả lý do không đáp ứng
+Mẫu bảng phản hồi RFP
+{Các cột file RFP gốc}
+PIC
+Trạng thái
+Phân loại Tuyên bố đáp ứng
+Diễn giải
+Hình ảnh tham chiếu
+Tài liệu tham chiếu
+Định dạng
+Giữ nguyên như file gốc
+text
+Chọn từ list option
+Chọn từ list option
+text
+text
+text
